@@ -1,4 +1,6 @@
 var broficate = require('./broficate');
 
 var words = process.argv.slice(2, process.argv.length);
-words.forEach(broficate);
+var broWords = words.map(broficate);
+
+broWords.forEach((word) => console.log(word));
