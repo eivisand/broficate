@@ -1,0 +1,14 @@
+{
+  "name": "broficate",
+  "version": "1.0.0",
+  "description": "Broficate words",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha broficateTests.js"
+  },
+  "keywords": [
+    "Bro"
+  ],
+  "author": "Brobama",
+  "license": "ISC"
+}
