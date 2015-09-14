@@ -8,6 +8,8 @@ prepend = (needle, replacement) => (word) => {
 var prependFunctions = [
   prepend('Pro', 'Bro'),
   prepend('pro', 'bro'),
+  prepend('Po', 'Bro'),
+  prepend('po', 'bro'),
   prepend('Ro', 'Bro'),
   prepend('ro', 'bro'),
   prepend('o', 'bro'),

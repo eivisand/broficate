@@ -18,7 +18,12 @@ describe('Broficate', function() {
   });
 
   it('Replaces \'ro\' with \'bro\'', function () {
-    assert.equal('bro', broficate());
-    assert.equal('Bro', broficate());
+    assert.equal('bro', broficate('ro'));
+    assert.equal('Bro', broficate('Ro'));
   });
+
+  it('Replaces \'po\' with \'bro\'', function () {
+      assert.equal('broseidon', broficate('poseidon'));
+      assert.equal('Broseidon', broficate('Poseidon'));
+    });
 });
