@@ -1,28 +1,22 @@
-prepend = (needle, replacement) => (word) => {
-  if (word.indexOf(needle) === 0) {
-    return replacement + word.substring(needle.length, word.length)
+wat = (word) => {
+  if (word.indexOf('o') === 1) {
+    return 'Bro' + word.substring(2, word.length);
+  }
+  if (word.indexOf('o') === 0 || word.indexOf('O') === 0) {
+    return 'Bro' + word.substring(1, word.length);
+  }
+  if (word.indexOf('ro') === 1) {
+    return 'Bro' + word.substring(3, word.length);
+  }
+   if (word.indexOf('au') === 0 || word.indexOf('Au') === 0) {
+    return 'Bro' + word.substring(2, word.length);
   }
   return word;
 }
-
-var prependFunctions = [
-  prepend('Pro', 'Bro'),
-  prepend('pro', 'bro'),
-  prepend('Po', 'Bro'),
-  prepend('po', 'bro'),
-  prepend('Ro', 'Bro'),
-  prepend('ro', 'bro'),
-  prepend('o', 'bro'),
-  prepend('O', 'Bro')
-];
 
 module.exports = function(word) {
   if (typeof word !== 'string') {
     return 'Sry, bro'
   }
-  var suggestions = prependFunctions
-  .map((fn) => fn(word))
-  .filter((suggestion) => suggestion !== word);
-
-  return (suggestions.length === 0) ? word : suggestions[0];
+  return wat(word);
 }
