@@ -1,22 +1,36 @@
-wat = (word) => {
-  if (word.indexOf('o') === 1) {
-    return 'Bro' + word.substring(2, word.length);
+var needles = [
+  {
+    target: 'o',
+    pos: 1
+  },
+  {
+    target: 'o',
+    pos: 0
+  },
+  {
+    target: 'ro',
+    pos: 1
+  },
+  {
+    target: 'au',
+    pos: 0
   }
-  if (word.indexOf('o') === 0 || word.indexOf('O') === 0) {
-    return 'Bro' + word.substring(1, word.length);
+];
+
+bro = (word, isCapitalized) => {
+  var needle = needles.find((needle) => word.indexOf(needle.target) === needle.pos);
+  if (!needle) {
+    return word;
   }
-  if (word.indexOf('ro') === 1) {
-    return 'Bro' + word.substring(3, word.length);
-  }
-   if (word.indexOf('au') === 0 || word.indexOf('Au') === 0) {
-    return 'Bro' + word.substring(2, word.length);
-  }
-  return word;
+  var bro = isCapitalized ? 'Bro' : 'bro';
+  var index = needle.target.length + needle.pos;
+  return bro + word.substring(index, word.length);
 }
 
 module.exports = function(word) {
   if (typeof word !== 'string') {
     return 'Sry, bro'
   }
-  return wat(word);
+  var isCapitalized = word.toUpperCase().charAt(0) === word.charAt(0);
+  return bro(word.toLowerCase(), isCapitalized);
 }
