@@ -14,3 +14,6 @@ Example:
 $ node index.js fus ro dah
 > fus bro dah
 ```
+
+### Requirements
+Requires Node v4.0.0 or greater. Download from https://nodejs.org/en/
