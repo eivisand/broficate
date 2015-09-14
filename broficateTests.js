@@ -16,4 +16,9 @@ describe('Broficate', function() {
     assert.equal('Brobama', broficate('Obama'));
     assert.equal('bromelette', broficate('omelette'));
   });
+
+  it('Replaces \'ro\' with \'bro\'', function () {
+    assert.equal('bro', broficate());
+    assert.equal('Bro', broficate());
+  });
 });
