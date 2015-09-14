@@ -20,9 +20,9 @@ module.exports = function(word) {
   if (typeof word !== 'string') {
     return 'Sry, bro'
   }
-  prependFunctions.forEach((fn) => {
-    word = fn(word)
-  });
+  var suggestions = prependFunctions
+  .map((fn) => fn(word))
+  .filter((suggestion) => suggestion !== word);
 
-  return word;
+  return (suggestions.length === 0) ? word : suggestions[0];
 }
