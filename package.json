@@ -10,5 +10,8 @@
     "Bro"
   ],
   "author": "Brobama",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
 }
